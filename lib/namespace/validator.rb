@@ -8,14 +8,14 @@ class Namespace
   class Validator
     attr_reader :fixes, :namespaces
 
-    def initialize(root_dir)
-      @root_dir = root_dir
+    def initialize(root_dirs)
+      @root_dirs = root_dirs
       @namespaces = {}
       @fixes = Hash.new { |hsh, k| hsh[k] = [] }
     end
 
     def call
-      directories = [@root_dir]
+      directories = @root_dirs
       new_directories = []
 
       while directories.any?

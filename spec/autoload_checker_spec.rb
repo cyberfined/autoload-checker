@@ -9,7 +9,9 @@ describe AutoloadChecker do
   describe '#call' do
     subject(:check) { autoload_checker.call }
 
-    let(:autoload_checker) { described_class.new(path: path, correct: correct, output: output) }
+    let(:autoload_checker) do
+      described_class.new(root_dirs: [path], correct: correct, output: output)
+    end
     let(:fixes) { autoload_checker.fixes }
     let(:output) { StringIO.new }
 

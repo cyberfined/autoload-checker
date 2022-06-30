@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class AutoloadChecker
-  def initialize(path:, correct:, output: $stderr)
-    @path = path
+  def initialize(root_dirs:, correct:, output: $stderr)
+    @root_dirs = root_dirs
     @correct = correct
     @output = output
   end
@@ -27,7 +27,7 @@ class AutoloadChecker
   private
 
   def validator
-    @validator ||= Namespace::Validator.new(@path)
+    @validator ||= Namespace::Validator.new(@root_dirs)
   end
 
   def correct?

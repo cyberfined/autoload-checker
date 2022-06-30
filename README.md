@@ -1,4 +1,4 @@
-# autoload_checker
+# autoload-checker
 
 Checks for conflicts in class/module definitions and corrects them. For instance, you have
 a file `foo/bar/baz.rb` with following content:
@@ -28,8 +28,8 @@ in `foo/bar/baz.rb`.
 # Usage
 
 ```
-Usage: ./autoload_checker.rb [options]
-    -p, --path FILE                  [Mandatory] file or directory to check
+Usage: ./bin/autoload_checker.rb [options]
+    -p, --path DIR,...               [Mandatory] directories to check
     -c, --correct                    Enable errors correction
     -h, --help                       Prints this help
 ```
