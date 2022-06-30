@@ -24,7 +24,7 @@ describe AutoloadChecker do
     shared_examples 'returns error' do
       it 'returns error' do
         check
-        expect(output.string).to eq(expected_fixes.map(&:pretty_error).join("\n") + "\n")
+        expect(output.string.split("\n")).to match_array(expected_fixes.map(&:pretty_error))
       end
     end
 
